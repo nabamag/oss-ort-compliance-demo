@@ -1,0 +1,17 @@
+{
+  "name": "oss-compliance-sample-app",
+  "version": "1.0.0",
+  "description": "A sample Node.js application for open-source compliance and software supply chain analysis.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "open-source-compliance",
+    "software-supply-chain",
+    "sbom",
+    "ort"
+  ],
+  "license": "MIT"
+}
