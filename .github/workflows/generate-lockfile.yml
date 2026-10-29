@@ -1,0 +1,28 @@
+name: Generate Package Lockfile
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-lockfile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Generate package-lock.json
+        working-directory: sample-app
+        run: npm install --package-lock-only
+
+      - name: Upload package-lock.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: package-lock
+          path: sample-app/package-lock.json
+          if-no-files-found: error
