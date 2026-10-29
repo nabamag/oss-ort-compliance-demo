@@ -1,0 +1,29 @@
+name: ORT Open Source Analysis
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ort-analysis:
+    name: Analyse Open Source Dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Run ORT analysis
+        uses: oss-review-toolkit/ort-ci-github-action@main
+        with:
+          run: >
+            cache-dependencies,
+            analyzer,
+            reporter,
+            upload-results
