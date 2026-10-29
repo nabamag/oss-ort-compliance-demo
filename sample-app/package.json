@@ -13,5 +13,8 @@
     "sbom",
     "ort"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "is-number": "7.0.0"
+  }
 }
